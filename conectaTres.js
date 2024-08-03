@@ -1,23 +1,30 @@
 
 let turno = 0; // Number will encrease for value validation of being even or odd.
 const tablero = [];
+let jugador = true;
+let bot = false;
+
 
 
 const btnPulsado = (e, pos) => { // function created for changes on buttons.
-    turno ++;
     const btn = e.target;
     if (btn.disabled || ganador()) {
         return;
     }
+
+    turno ++;
     const color = turno % 2 ? 'salmon' : 'paleGreen';
     const fichas = turno % 2 ? 'X' : 'O';
     btn.style.backgroundColor = color;
     btn.innerHTML = fichas;
     btn.disabled = true;
-    tablero[pos] = color;
+    tablero[pos] = fichas;
+
     if(ganador()) { //following statement will be displayed when ganador.
-        return document.querySelector("#texto").innerHTML = "El jugador " + fichas + " ha ganado la partida!"
+        document.getElementById('texto').innerHTML = "El jugador " + fichas + " ha ganado la partida!"
+        return;
     }
+
 }
 
 

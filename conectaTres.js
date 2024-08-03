@@ -6,10 +6,14 @@ const tablero = [];
 const btnPulsado = (e, pos) => { // function created for changes on buttons.
     turno ++;
     const btn = e.target;
+    if (btn.disabled || ganador()) {
+        return;
+    }
     const color = turno % 2 ? 'salmon' : 'paleGreen';
     const fichas = turno % 2 ? 'X' : 'O';
     btn.style.backgroundColor = color;
     btn.innerHTML = fichas;
+    btn.disabled = true;
     tablero[pos] = color;
     if(ganador()) { //following statement will be displayed when ganador.
         return document.querySelector("#texto").innerHTML = "El jugador " + fichas + " ha ganado la partida!"
@@ -51,5 +55,11 @@ const ganador = () => { // conditions to be a winner.
                                 return false;
 }
 
-document.querySelectorAll('button').forEach(
-    (obj, i) => obj.addEventListener('click', (e) => btnPulsado(e, i)));
+
+        for (let i = 0; i < 9; i++) {
+            const btn = document.getElementById(`p${i}`);
+            if (btn) {
+                btn.addEventListener('click', (e) => btnPulsado(e, i));
+            }
+        }
+    

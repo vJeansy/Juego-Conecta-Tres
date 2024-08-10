@@ -23,7 +23,7 @@ const btnPulsado = (e, pos) => {
 }
 // bot function for autoplay.
 const turnoBot = () => {
-    let = pos;
+    let pos;
     do {
         pos = Math.floor(Math.random() * 9);
     } while (tablero[pos]); // Making sure position is not taken.

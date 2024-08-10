@@ -17,8 +17,11 @@ const btnPulsado = (e, pos) => {
         document.getElementById('texto').innerHTML = `El jugador ${fichas} ha ganado la partida!`
         return;
     }
-    if (turno % 2 === 1) { // Delay on bot turn.
+    if (turno % 2 === 1 && turno !=9) { // Delay on bot turn.
         setTimeout(turnoBot, 500);
+    }
+    if (turno == 9 && !ganador()) {
+        document.getElementById('texto').innerHTML = "No hubo ganadores!"
     }
 }
 // bot function for autoplay.

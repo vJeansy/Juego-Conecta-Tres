@@ -1,0 +1,52 @@
+.adds-container {
+    padding: 70px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.adds-container .adds {
+    padding: 0px 76px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 1600px) { /* adds size for smaller PC/Tablet screens */
+    .adds-container .adds {
+        padding: 10px 50px;
+    }
+}
+
+@media (max-width: 500px) { /* adds size for cell phones */
+    .adds-container .adds {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 1600px) {
+    .adds-container #hide-img {
+        display: none;
+    }
+}
+
+@media (max-width: 500px) { /* tic tac toc icon add for cell phone view hidden */
+    .adds-container #hide-one {
+        display: none;
+    }
+}
+
+.adds-container .adds img{
+    height: 70px;
+    width: auto;
+    transition: all 0.3s;
+}
+
+@media (max-width: 500px) { /* google add for cell phone view */
+    #google img {
+        width: 200px;
+        flex-wrap: wrap;
+    }
+}
+
+.adds-container .adds img:hover{
+    transform: scale(1.1);
+}

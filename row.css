@@ -31,7 +31,12 @@ section {
     height: 150px;
     max-width: 33.33%;
     font-size: 5vw;
+    background-color: #ffffff;
     
+}
+
+.table-game button:hover{
+    background-color: #acacac;
 }
 
 .rigth-side {

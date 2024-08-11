@@ -1,7 +1,7 @@
 let turno = 0; // Number will encrease for value validation of being even or odd.
 const tablero = Array(9).fill(null);
-const user = 1;
-const bot = 2;
+let userWins = 1;
+let botWins = 1;
 // function created for changes on buttons.
 const btnPulsado = (e, pos) => {
     const btn = e.target;
@@ -15,6 +15,7 @@ const btnPulsado = (e, pos) => {
     tablero[pos] = fichas;
     if(ganador()) { //following statement will be displayed when ganador.
         document.getElementById('texto').innerHTML = `El jugador ${fichas} ha ganado la partida!`
+        document.getElementById('user-points').innerHTML = userWins++;
         return;
     }
     if (turno % 2 === 1 && turno !=9) { // Delay on bot turn.
@@ -37,7 +38,21 @@ const turnoBot = () => {
     turno++;
     if (ganador()) {
         document.getElementById('texto').innerHTML = "El jugador O ha ganado la partida!";
+        document.getElementById('bot-points').innerHTML = botWins++;
     }
+}
+// Re-start the game!
+const refresh = () => {
+    for (let i = 0; i < 9; i++) {
+        tablero[i] = null;
+        const btn = document.getElementById(`p${i}`);
+        if(btn) {
+            btn.innerHTML = '';
+            btn.disabled = false;
+        }
+    }
+    turno = 0;
+    document.getElementById('texto').innerHTML = 'CONECTA TRES! X / O';
 }
 // conditions to be a winner.
 const ganador = () => {
@@ -70,3 +85,6 @@ for (let i = 0; i < 9; i++) {
         btn.addEventListener('click', (e) => btnPulsado(e, i));
     }
 }
+
+// eventListener for refresh buttons.
+document.getElementById('reload').addEventListener('click', refresh);

@@ -1,0 +1,49 @@
+.navBar-container { /* Header's body */
+    width: 100%;
+    height: auto;
+    background: #00416A;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E4E5E6, #00416A);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E4E5E6, #00416A); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navBar-container ul {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.navBar-container ul li{
+    list-style: none;
+    transition: all 0.3s;
+}
+
+.navBar-container ul li:hover {
+    transform: scale(1.1);
+}
+
+.navBar-container ul li a {
+    font-size: 1.3em;
+}
+
+.navBar-container .nav-1 li { /* navBar left side */
+    text-decoration: none;
+    border-radius: 5%;
+    margin: 10px
+}
+
+.navBar-container .nav-1 li a {
+    color: #000000;
+    list-style: none;
+    text-decoration: none;
+    font-size: 1.9em;
+}
+
+.navBar-container .nav-2 li a { /* navBar contacts side */
+    color: #ffffff;
+    text-decoration: none;
+    margin: 7px;
+}

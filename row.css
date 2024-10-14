@@ -1,0 +1,53 @@
+
+section {
+    margin: auto;
+    padding: 20px 0;
+}
+
+.row {
+    padding: 30px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-side {
+    flex: 50%;
+    padding: 0px 10px;
+
+}
+
+.table-game {
+    border-style: solid;
+    margin: auto;
+    width: 450px;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: black;
+    
+}
+
+.table-game button{
+    width: 150px;
+    height: 150px;
+    max-width: 33.33%;
+    font-size: 5vw;
+    background-color: #ffffff;
+    
+}
+
+.table-game button:hover{
+    background-color: #acacac;
+}
+
+.rigth-side {
+    flex: 20%;
+    padding: 0px 10px;
+    max-width: 100%;
+    flex-wrap: wrap;
+    border: solid;
+    background: #EFEFBB;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #D4D3DD, #EFEFBB);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D4D3DD, #EFEFBB); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}

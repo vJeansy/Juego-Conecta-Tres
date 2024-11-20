@@ -5,22 +5,12 @@ let botWins = 1;
 // function created for changes on buttons.
 const btnPulsado = (e, pos) => {
     const btn = e.target;
-<<<<<<< HEAD
     if (tablero[pos] || ganador()) {
         return;
     }
     turno ++;
     const fichas = turno % 2 ? 'X' : 'O';
     btn.innerHTML = fichas;
-=======
-    if (btn.disabled || ganador()) {
-        return;
-    } 
-    turno ++;
-    const fichas = turno % 2 ? 'X' : 'O';
-    btn.innerHTML = fichas;
-    btn.disabled = true;
->>>>>>> 60e96c66dc5476cc12123f7a964ca1583ad14134
     tablero[pos] = fichas;
     if(ganador()) { //following statement will be displayed when ganador.
         document.getElementById('texto').innerHTML = `El jugador ${fichas} ha ganado la partida!`
@@ -42,13 +32,9 @@ const turnoBot = () => {
     } while (tablero[pos]); // Making sure position is not taken.
     const btn = document.getElementById(`p${pos}`);
     btn.innerHTML = 'O';
-<<<<<<< HEAD
     if(tablero[pos]) {
         return;
     }
-=======
-    btn.disabled = true;
->>>>>>> 60e96c66dc5476cc12123f7a964ca1583ad14134
     tablero[pos] = 'O';
     turno++;
     if (ganador()) {
@@ -63,53 +49,35 @@ const refresh = () => {
         const btn = document.getElementById(`p${i}`);
         if(btn) {
             btn.innerHTML = '';
-<<<<<<< HEAD
             //btn.disabled = false;
-=======
-            btn.disabled = false;
->>>>>>> 60e96c66dc5476cc12123f7a964ca1583ad14134
         }
     }
     turno = 0;
     document.getElementById('texto').innerHTML = 'CONECTA TRES! X / O';
 }
 // conditions to be a winner.
-<<<<<<< HEAD
 const ganador = (win) => {
 //Verify horizontal lines.
-=======
-const ganador = () => {
-// Verify horizontal lines.
->>>>>>> 60e96c66dc5476cc12123f7a964ca1583ad14134
 if (tablero[0] == tablero[1] && tablero[0] == tablero[2] && tablero[0]) {
     return true;
     } else if (tablero[3] == tablero[4] && tablero[3] == tablero[5] && tablero[3]) {
     return true;
     } else if (tablero[6] == tablero[7] && tablero[6] == tablero[8] && tablero[6]) {
     return true;
-<<<<<<< HEAD
  //Verify vertical lines.
-=======
-// Verify vertical lines.
->>>>>>> 60e96c66dc5476cc12123f7a964ca1583ad14134
     } else if (tablero[0] === tablero[3] && tablero[0] === tablero[6] && tablero[0]) {
     return true;
     } else if (tablero[1] === tablero[4] && tablero[1] === tablero[7] && tablero[1]) {
     return true;
     } else if (tablero[2] === tablero[5] && tablero[2] === tablero[8] && tablero[2]) {
     return true;
-<<<<<<< HEAD
  //Verify diagonal lines.
-=======
-// Verify diagonal lines.
->>>>>>> 60e96c66dc5476cc12123f7a964ca1583ad14134
     } else if (tablero[0] === tablero[4] && tablero[0] === tablero[8] && tablero[0]) {
     return true;
     } else if (tablero[6] === tablero[4] && tablero[6] === tablero[2] && tablero[6]) {
     return true;
     }
     return false;
-<<<<<<< HEAD
 
     // const lines = [
     //     [0, 1, 2],
@@ -128,8 +96,6 @@ if (tablero[0] == tablero[1] && tablero[0] == tablero[2] && tablero[0]) {
     //     }
     // }
     // return false;
-=======
->>>>>>> 60e96c66dc5476cc12123f7a964ca1583ad14134
 }
 // display on html by clicking.
 for (let i = 0; i < 9; i++) {
